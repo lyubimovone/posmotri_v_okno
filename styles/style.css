@@ -39,7 +39,6 @@ ol {
 
 .content {
   display: flex;
-  margin-inline: auto;
   align-items: flex-end;
   width: 100%;
   padding-inline: 64px;
@@ -47,20 +46,15 @@ ol {
   margin-top: 132px;
 }
 
-.result {
-  max-width: 711px;
-}
-
 .result__video-container {
   position: relative;
-  max-width: 711px;
   margin-bottom: 16px;
 }
 
 .result__video {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
+  width: 711px;
+  height: 386px;
 }
 
 .search-form {
@@ -72,7 +66,9 @@ ol {
 .content__list {
   position: relative;
   height: 298px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
 }
 
 .content__details {
@@ -95,13 +91,14 @@ ol {
 
 .content__video-card-thumbnail {
   width: 194px;
+  margin-left: 7px;
 }
 
 .search-form__fieldset-title {
   font-weight: 400;
   font-size: 18px;
+  margin-bottom: 5px;
 }
-
 
 .title {
   font-family: "Oswald", sans-serif;
@@ -174,7 +171,7 @@ ol {
   outline-offset: 1px;
 }
 
-.search-form__label-text:hover {
+.search-form__label:hover {
   text-decoration: underline;
 }
 
@@ -211,16 +208,26 @@ ol {
 
 .search-form__submit-button {
   width: 194px;
-  margin-top: 16px;
+  margin-bottom: 4px;
+}
+
+.search-form__submit-button:active {
+  background-color: #545050;
+  text-decoration: none;
+}
+
+.search-form__submit-button:hover {
+  text-decoration: underline;
 }
 
 .more-button {
-  width: 100%;
+  margin: 4px 4px 1px 4px;
+  width: calc(100% - 4px);
 }
 
 .search-form__checkbox-list {
   display: flex;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   column-gap: 15px;
 }
 
@@ -229,13 +236,16 @@ ol {
   width: 19px;
   height: 19px;
   margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-form__pseudo-checkbox::after {
   content: "";
   display: block;
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
   background-color: #fff;
   scale: 0;
 }
@@ -254,7 +264,7 @@ ol {
   border: none;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
-  padding: 0;
+  color:#545050;
 }
 
 .search-form__textfield:focus {
@@ -264,3 +274,21 @@ ol {
 .search-form__textfield:active {
   outline: 1px solid #fff;
 }
+
+.content__card-link {
+  display: block;
+  margin: 2px;
+}
+
+.content__card-link_current {
+  background-color:  #545050;
+}
+
+.content__card-link_current:hover {
+  text-decoration: underline;
+}
+
+.content__card-link_current:focus {
+  outline: 1px solid #fff;
+}
+
